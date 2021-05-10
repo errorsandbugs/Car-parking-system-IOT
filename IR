@@ -1,0 +1,16 @@
+int a;
+void setup() {
+  pinMode(D0, OUTPUT);     
+  pinMode(D1,INPUT);
+}
+
+void loop() {
+  a=digitalRead(D1);
+   if (a==1){
+  digitalWrite(D0, LOW);  
+  }
+  else{
+    digitalWrite(D0, HIGH);
+  }
+
+                    
