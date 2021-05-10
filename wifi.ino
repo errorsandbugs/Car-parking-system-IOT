@@ -1,7 +1,7 @@
 #include <ESP8266WiFi.h>
 
-const char *ssid =  "Please don't connect!";     // replace with your wifi ssid and wpa2 key
-const char *pass =  "qsxnkp610";
+const char *ssid =  "your wifi name!";     // replace with your wifi ssid and wpa2 key
+const char *pass =  "password";
 
 WiFiClient client;
  
