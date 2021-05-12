@@ -1,0 +1,99 @@
+#include <ESP8266WiFi.h>
+#define BLYNK_PRINT Serial    // Comment this out to disable prints and save space
+#include <BlynkSimpleEsp8266.h>
+WidgetLED led1(V1);
+WidgetLED led2(V2);
+WidgetLED led3(V3);
+WidgetLED led4(V0);
+char auth[] = "reFO675J5n0IitmlZgyxlYnUt1ZBjJEp";
+
+// Your WiFi credentials.
+// Set password to "" for open networks.
+char ssid[] = "Please don't connect!";
+char pass[] = "qsxnkp610";
+
+
+int irPin1=D0;
+int irPin2=D1;
+int irPin3=D2;
+int irPin4=D3;
+int irValue; // Place to store read PIR Value
+
+void setup()
+{
+  Serial.begin(9600);
+  delay(10);
+  Blynk.begin(auth, ssid, pass);
+  pinMode(irPin1, INPUT);
+  pinMode(irPin2, INPUT);
+  pinMode(irPin3, INPUT);
+  pinMode(irPin4, INPUT);
+}
+
+void loop()
+{
+  getirValue();
+  Blynk.run();
+}
+
+
+void getirValue(void)
+{
+  irValue = digitalRead(irPin1);
+  delay(300);
+  if (irValue==0) 
+  { 
+    Serial.println("1on");
+    led1.on();  
+    }
+  else{
+    led1.off();
+     Serial.println("1off");
+  }
+
+
+
+  
+  irValue = digitalRead(irPin2);
+  delay(300);
+  if (irValue==0) 
+  { 
+    Serial.println("1on");
+    led2.on();  
+    }
+  else{
+    led2.off();
+     Serial.println("1off");
+  }
+
+
+
+  
+  irValue = digitalRead(irPin3);
+  delay(300);
+  if (irValue==0) 
+  { 
+    Serial.println("1on");
+    led3.on();  
+    }
+  else{
+    led3.off();
+     Serial.println("1off");
+  }
+
+
+
+  
+  irValue = digitalRead(irPin4);
+  delay(300);
+  if (irValue==0) 
+  { 
+    Serial.println("1on");
+    led4.on();  
+    }
+  else{
+    led4.off();
+     Serial.println("1off");
+  }
+  delay(300);
+}
