@@ -9,8 +9,8 @@ char auth[] = "reFO675J5n0IitmlZgyxlYnUt1ZBjJEp";
 
 // Your WiFi credentials.
 // Set password to "" for open networks.
-char ssid[] = "Please don't connect!";
-char pass[] = "qsxnkp610";
+char ssid[] = "";
+char pass[] = "";
 
 
 int irPin1=D0;
